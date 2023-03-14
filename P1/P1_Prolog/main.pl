@@ -1,0 +1,17 @@
+es_progrenitor(amalia,alvaro).
+es_progrenitor(jesus,alvaro).
+es_progrenitor(elena,america).
+es_progrenitor(salvador,america).
+es_progrenitor(america,david).
+es_progrenitor(alvaro,david).
+es_progrenitor(america,diego).
+es_progrenitor(alvaro,diego).
+hombre(alvaro).
+hombre(david).
+hombre(diego).
+hombre(jesus).
+mujer(amalia).
+mujer(elena).
+mujer(america).
+padre(x,y):-es_progrenitor(x,y).hombre(x).
+madre(x,y):-es_progrenitor(x,y).mujer(x).
