@@ -1,0 +1,15 @@
+encargado_de_tarea(miguel, admision).
+encargado_de_tarea(miguel, control).
+encargado_de_tarea(miguel, vigilancia).
+encargado_de_tarea(ricardo, planificacion).
+encargado_de_tarea(ricardo, asesoramiento).
+encargado_de_tarea(alicia, direccion).
+encargado_de_tarea(alicia, control).
+encargada(Tarea) :-
+    encargado_de_tarea(Trabajador, Tarea),
+    write(Trabajador), write(' está encargado de la tarea '), write(Tarea), nl.
+comparten_tarea(Persona1, Persona2) :-
+    encargado_de_tarea(Persona1, Tarea),
+    encargado_de_tarea(Persona2, Tarea),
+    Persona1 \= Persona2,
+    write(Persona1), write(' y '), write(Persona2), write(' comparten la tarea '), write(Tarea), nl.
