@@ -11,8 +11,8 @@ public class centro_comercial {
     }
 
 
-    public void dec_est(int lugares, int x, int y,int niv){
-        this.parking=new estacionamiento(lugares, x, y,niv);
+    public void dec_est(int lugares, int x, int y,int niv,double cuota){
+        this.parking=new estacionamiento(lugares, x, y,niv,cuota);
     }
 
     public void new_store(String name, String product,double area,String dueno,int local){
