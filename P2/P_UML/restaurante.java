@@ -6,13 +6,15 @@ public class restaurante {
     private int lugares_totales;
     private String estilo;
     private int meseros;
+    private int chefs;
 
-    public restaurante(String nom, int lugares, String estilo, int mesero){
+    public restaurante(String nom, int lugares, String estilo, int mesero,int chefs){
         this.nombre=nom;
         this.num_comensales=0;
         this.lugares_totales=lugares;
         this.estilo=estilo;
         this.meseros=mesero;
+        this.chefs=chefs;
     }
     public boolean enter_comensales(int num){
         if(lugares_totales-num_comensales>=num){
@@ -40,4 +42,9 @@ public class restaurante {
         this.meseros+=num;
         return meseros;
     }
+
+    public int get_chefs(){
+        return this.chefs;
+    }
+
 }
