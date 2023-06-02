@@ -9,11 +9,11 @@ public class Carnes{
     }
     public void vender(double peso){
         if(peso>this.cantidad){
-            System.out.print("No existe esa cantidad");
+            System.out.print("No existe esa cantidad\n");
         }else{
             this.cantidad-=peso;
             double pago=peso*this.precio;
-            System.out.print("Total a pagar: "+pago);
+            System.out.print("Total a pagar: "+pago+"Por "+peso+"kg de "+this.get_nombre()+'\n');
         }
 
     }

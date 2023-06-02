@@ -1,13 +1,19 @@
 package P_UML;
 import java.util.Arrays;
 import java.util.Scanner;
+import P_UML.estacionamiento;
+import P_UML.restaurante;
+import P_UML.Tienda_dep;
+
+
+
 public class centro_comercial {
     private String domicilio;
     private double superficie;
     private String nombre;
-    public estacionamiento parking;
-    private Tienda_dep[] tiendas;
-    private restaurante[] restaurantes;
+    public P_UML.estacionamiento parking;
+    private P_UML.Tienda_dep[] tiendas;
+    private P_UML.restaurante[] restaurantes;
     private int pisos;
     private int lugares;
 
@@ -55,32 +61,43 @@ public class centro_comercial {
     }
 
     public void new_store(String name, String product,double area,String dueno,int local){
-        if (this.lugares==0){
+        if (this.lugares == 0) {
             System.out.println("No se pudo agregar lugar");
             return;
         }
-        this.tiendas = Arrays.copyOf(tiendas, tiendas.length + 1);
-        this.tiendas[0]=new Tienda_dep(name, product, area, dueno, local);
-        this.lugares-=1;
-
+        
+        Tienda_dep nuevaTienda = new Tienda_dep(name, product, area, dueno, local);
+        if (this.tiendas == null) {
+            this.tiendas = new Tienda_dep[1];
+        } else {
+            this.tiendas = Arrays.copyOf(this.tiendas, this.tiendas.length + 1);
+        }
+        this.tiendas[this.tiendas.length - 1] = nuevaTienda;
+        this.lugares -= 1;
     }
 
-    public void append_restaurant(String name, String producto, double espacio, String propietario,int local ){
-        if (this.lugares==0){
+    public void append_restaurant(String name, int lugares, String estilo, int mesero, int chefs ){
+        if (this.lugares == 0) {
             System.out.println("No se pudo agregar lugar");
             return;
         }
-        this.restaurantes=Arrays.copyOf(restaurantes, restaurantes.length+1);
-        this.tiendas[0]=new Tienda_dep(name, producto, espacio, propietario,local);
-        this.lugares-=1;
+        
+        restaurante nuevoRestaurante = new restaurante(name,lugares,estilo,mesero,chefs);
+        if (this.restaurantes == null) {
+            this.restaurantes = new restaurante[1];
+        } else {
+            this.restaurantes = Arrays.copyOf(this.restaurantes, this.restaurantes.length + 1);
+        }
+        this.restaurantes[this.restaurantes.length - 1] = nuevoRestaurante;
+        this.lugares -= 1;
     }
 
     public Tienda_dep[] get_store(){
-        return tiendas;
+        return this.tiendas;
     }
 
     public restaurante[] get_restaurant(){
-        return restaurantes;
+        return this.restaurantes;
     }
 
 
@@ -153,15 +170,17 @@ public class centro_comercial {
                 }
             }
             for(int i=0;i<lugares;i++){
-                System.out.print("Introduce el nombre\n");//Area dueño y local
+                System.out.print("Introduce el nombre\n");//
                 name=scan.nextLine();
-                System.out.print("Introduce el tipo de producto\n");
-                producto=scan.nextLine();
-                System.out.print("Introduce el area del local");
-                sup=scan.nextDouble();
-                System.out.print("Introduce el nombre del duenio");
+                System.out.print("Introduce los lugares que tiene\n");
+                lugares=scan.nextInt();
+                System.out.print("Introduce el numero de meseros\n");
+                int messss=scan.nextInt();
+                System.out.print("Introduce el estilo del restaurabnte\n");
                 duenio=scan.nextLine();
-                mall.append_restaurant(name, producto, sup,duenio, i);
+                System.out.print("Introduce el numero de chefs\n");
+                int chefs=scan.nextInt();
+                mall.append_restaurant(name, lugares,duenio,messss,chefs);
        
                 }
         }
@@ -179,3 +198,5 @@ public class centro_comercial {
         
     }
 }
+
+
