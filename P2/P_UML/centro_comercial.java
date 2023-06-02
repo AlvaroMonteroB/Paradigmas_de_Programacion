@@ -1,9 +1,7 @@
 package P_UML;
 import java.util.Arrays;
 import java.util.Scanner;
-import P_UML.estacionamiento;
-import P_UML.restaurante;
-import P_UML.Tienda_dep;
+
 
 
 
@@ -74,6 +72,9 @@ public class centro_comercial {
         }
         this.tiendas[this.tiendas.length - 1] = nuevaTienda;
         this.lugares -= 1;
+    }
+    public int getPisos() {
+        return pisos;
     }
 
     public void append_restaurant(String name, int lugares, String estilo, int mesero, int chefs ){
