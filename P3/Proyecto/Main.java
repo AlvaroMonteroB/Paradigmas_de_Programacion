@@ -68,18 +68,22 @@ public class Main {
                 
         
                 if(menu==1){                        
-                for(int i=0;i<5;i++){
+                for(int i=0;i<1;i++){
         
                 System.out.println((i+1)+" "+ bebidas[i].getNombre()+ " $" +bebidas[i].getprecio());
                 System.out.println(comidas[i].getNombre()+ " $" +comidas[i].getprecio());
                 System.out.println(postres[i].getNombre()+" $" + postres[i].getprecio());
                 }
-        }else{
-                System.out.println("Registra todos los platillos por favor, el menu aun está vacio");
-        } 
-}
+                        }else{
+                                System.out.println("Registra todos los platillos por favor, el menu aun está vacio");
+                        } 
+                }
         //}
-//}
+//}     
+
+        private double precio(){
+                
+        }
 
         private static void realizarPedido(Scanner scanner) {
                 System.out.println("Realizando pedido...");
@@ -179,7 +183,7 @@ public class Main {
         private static void registrarPlatillo(Scanner scanner){
                 System.out.println("Registrando platillo\n");
                 System.out.println("Ingrese el tipo de platillo que desea registrar\n");
-                System.out.println("1. Bebida\n 2. Comida\n 3. Postre\n");
+                System.out.println("1. Bebida\n2. Comida\n3.Postre\n");
                 System.out.println("4.Salir al menu principal\n");        
 
                 
@@ -239,7 +243,7 @@ public class Main {
 
                                                                 break;
                                                         case 2:
-                                                                for(opcionbebida=0;opcionbebida<5;opcionbebida++){ 
+                                                                for(opcionbebida=0;opcionbebida<1;opcionbebida++){ 
                                                                 System.out.println("Dame el nombre de la bebida");
                                                                 String nombrebebida = scanner.nextLine();
                                                                 System.out.println("Ingresa los ingredientes necesarios para la bebida (ingrese '0' para terminar):");
@@ -320,7 +324,7 @@ public class Main {
 
 
                                                         case 2:
-                                                                for(opcioncomida=0;opcioncomida<5;opcioncomida++){ 
+                                                                for(opcioncomida=0;opcioncomida<1;opcioncomida++){ 
                                                                 System.out.println("Dame el nombre de la comida");         
                                                                 String nombrecomida = scanner.nextLine();
                                                                 System.out.println("Ingresa los ingredientes necesarios para la comida (ingrese '0' para terminar):");
@@ -356,7 +360,7 @@ public class Main {
 
                                 case 3:
                                         int opipos;
-                                        System.out.println("Para modificar alguna bebida pulsa 1. \nPara agregar las 5 comidas posibles pulsa 2.\n3.-Terminar\n");
+                                        System.out.println("Para modificar algun postre pulsa 1. \nPara agregar los postres posibles pulsa 2.\n3.-Terminar\n");
                                         do{         
                                                 opipos= scanner.nextInt();
                                                 scanner.nextLine(); // Limpiar el buffer de entrada
@@ -397,7 +401,7 @@ public class Main {
                                                                 break;
                                                         
                                                         case 2: 
-                                                                for(opcionpostre=0;opcionpostre<5;opcionpostre++){                 
+                                                                for(opcionpostre=0;opcionpostre<1;opcionpostre++){                 
                                                                 System.out.println("Dame el nombre del postre");         
                                                                 String nombrepostre = scanner.nextLine();
                                                                 System.out.println("Ingresa los ingredientes necesarios para el postre (ingrese '0' para terminar):");
