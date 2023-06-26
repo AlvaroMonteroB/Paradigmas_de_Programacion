@@ -44,7 +44,7 @@ public class Pedido {
     }
 
     public void mostrarInformacion() {
-        System.out.println("Pedido #" + numeroPedido + ": " + descripcion + ". Monto: $" + monto);
+        System.out.println("Pedido #" + numeroPedido + ": " + descripcion );
         System.out.println("Restaurante: " + restaurante.getNombre());
     }
 }

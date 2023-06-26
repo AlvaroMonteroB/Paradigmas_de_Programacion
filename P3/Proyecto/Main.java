@@ -81,9 +81,7 @@ public class Main {
         //}
 //}     
 
-        private double precio(){
-                
-        }
+
 
         private static void realizarPedido(Scanner scanner) {
                 System.out.println("Realizando pedido...");
