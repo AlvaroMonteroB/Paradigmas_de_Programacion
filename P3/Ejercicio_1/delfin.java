@@ -21,7 +21,7 @@ public class delfin extends Animal implements Mascota {
     }
 
     public void comer(){
-
+        System.out.print("Delfin comienod\n");
     }
     @Override
     public void jugar(){
